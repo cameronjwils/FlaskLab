@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1>Events Planner</h1>
+
+    <form action="/Home" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <label for="Date">Date:</label>
+        <input type="date" name="date" id="date"> 
+        <label for="number of guests">Number of Guests:</label>
+        <input type="text" name="number_of_guests" id="number_of_guests">
+        <label for="name">Room Location:</label>
+        <input type="text" name="room_location" id="room_location">
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description">
+        <!-- <label for="recurring">Recurring</label>
+        <input type="checkbox" name="recurring" id="recurring"> -->
+        <!-- <label for="completed">Completed</label>
+        <input type="checkbox" name="completed" value="True" id="completed"> -->
+        <input type="submit" value="Add Event">
+      </form>
+
+    {% for event in events %}
+    <div>
+    <p>
+        <ul>
+            <li>Name: {{event.name}}</li>
+            <li>Date: {{event.date}}</li>
+            <li>Number of Guests: {{event.no_of_guests}}</li>
+            <li>Room Location: {{event.room_location}}</li>
+            <li>Description: {{event.description}}</li>
+            <li>Recurring: {% if event.recurring %}
+                            <span>&#9989;</span>
+                            {% endif %}</li>
+        </ul>
+    </p>
+    </div>
+    {% endfor %}
+
+</body>
+</html>
