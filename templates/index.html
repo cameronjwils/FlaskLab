@@ -22,8 +22,8 @@
         <input type="text" name="description" id="description">
         <label for="recurring">Recurring</label>
         <input type="checkbox" name="recurring" id="recurring">
-        <!-- <label for="completed">Completed</label>
-        <input type="checkbox" name="completed" value="True" id="completed"> -->
+        <label for="completed">Completed</label>
+        <input type="checkbox" name="completed" value="True" id="completed">
         <input type="submit" value="Add Event">
       </form>
 
@@ -37,6 +37,9 @@
             <li>Room Location: {{event.room_location}}</li>
             <li>Description: {{event.description}}</li>
             <li>Recurring: {% if event.recurring %}
+                            <span>&#9989;</span>
+                            {% endif %}</li>
+            <li>Completed: {% if event.completed %}
                             <span>&#9989;</span>
                             {% endif %}</li>
         </ul>
